@@ -1,37 +1,18 @@
-## Site Meta ##
-# The title of the website.
-title: "'t ringwinkeltje"
-# The description of the website
-description: "ringen"
-# Keywords/tags for you site.
-keywords: "ring, ringen"
-# Your copyright message.
-copyright: "Copyright &copy; 2020 - 't ringwinkeltje."
+# Site settings
+title: tringwinkeltje
+description: 'Ringen door Myriam en Annie'
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+author:
 
-## Site Configurations ##
-# 1st heading of the site.
-header: "'t ringwinkeltje"
-# 2nd heading/sub heading of the website.
-subheader: "Myri-Ann"
-# A description/bio of the website.
-bio: "Ringen door Myriam en Annie."
-social:
-  facebook_username: ""
-  # Your Instagram username.
-  instagram_username: ""
-  # Your email address.
-  email: ""
+# Collection settings
+collections:
+  photos:
 
-## Gallery Configuration ##
-# If you modify this, also modify the `default.scope.path` key below.
-gallery_dir: "gallery"
-# Any valid value of "background-position" CSS attribute.
-image_position: "left center"
+# Social settings
+facebook_url:
+instagram_url:
+pinterest_url:
 
-## Jekyll Configuration ##
-defaults:
- - scope:
-    # Should be same as the `gallery_dir` key above.
-    path: "gallery"
-   values:
-    image: true
+# Build settings
+markdown: kramdown
