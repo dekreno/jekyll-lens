@@ -1,7 +1,7 @@
 # Site settings
 title: tringwinkeltje
 description: 'Ringen door Myriam en Annie'
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "/tringwinkeltje/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 author:
 
