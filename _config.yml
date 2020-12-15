@@ -63,9 +63,9 @@ defaults:
       menu: default
   -
     scope:
-      path: "en"
+      path: "nl"
     values:
-      lang: "en"
+      lang: "nl"
   # -
   #   scope:
   #     path: "fr"
