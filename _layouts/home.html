@@ -1,31 +1,27 @@
-<!DOCTYPE HTML>
-<!--
-	Lens by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
-{% include head.html %}
-
-    <body class="is-loading-0 is-loading-1 is-loading-2">
-
-        <!-- Main -->
-        <div id="main">
-
-        {% include header.html %}
-        
-        {{ content }}
-
-        {% include footer.html %}
-
+---
+layout: default
+---
+{%- assign collections = site.collections | sort: 'date' | shift -%}
+<!-- Main -->
+<section id="main">
+    <!-- Items -->
+    {%- for collection in collections -%}
+    {%- if collection.docs.size > 0 -%}
+    <div class="items">
+        {%- assign docs = collection.docs | sort: 'date' -%}
+        {%- if forloop.index == 1 -%}
+        <div class="item intro span-2">
+            <h1>{{ site.title }}</h1>
+            <p>{{ site.subtitle }}<br/></p>
         </div>
-
-        <!-- Scripts -->
-        <script src="{{ "assets/js/jquery.min.js" | absolute_url }}"></script>
-        <script src="{{ "assets/js/skel.min.js" | absolute_url }}"></script>
-        <!--[if lte IE 8]><script src="{{ "assets/js/ie/respond.min.js" | absolute_url }}></script><![endif]-->
-        <script src="{{ "assets/js/main.js" | absolute_url }}"></script>
-
-    </body>
-</html>
+        {%- endif -%}
+        {%- for doc in docs -%}
+        <article class="item thumb span-{{ doc.span }}">
+            <h2>{{ doc.title }}</h2>
+            <a href="{{ doc.image | absolute_url }}" class="image"><img src="{{ doc.thumb | absolute_url }}" alt=""></a>
+        </article>
+        {%- endfor -%}
+    </div>
+    {%- endif -%}
+    {%- endfor -%}
+</section>

@@ -1,18 +1,87 @@
 # Site settings
-title: "'t Ringwinkeltje"
-description: 'Ringen door Myriam en Annie'
-baseurl: "/tringwinkeltje/" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-author:
+title: Parallelism
+description: >- # this means to ignore newlines until "baseurl:"
+  A responsive site template designed by HTML5 Up,<br>
+  ported to Jekyll by MOODULE<br>
+  and released under the Creative Commons.
 
-# Collection settings
-collections:
-  photos:
+# Contact information
+street_address: 1234 Somewhere Road
+city: Nashville
+state: TN
+zip_code: 55555
+country: United States of America
+phone: (716) 555-5555
+email: youremailaddress@gmail.com
 
 # Social settings
-facebook_url:
-instagram_url:
-pinterest_url:
+500px_url: https://github.com/moodule
+facebook_url: https://github.com/moodule
+github_url: https://github.com/moodule
+gitlab_url: https://github.com/moodule
+instagram_url: https://github.com/moodule
+linkedin_url: https://github.com/moodule
+pinterest_url: https://github.com/moodule
+slack_url: https://github.com/moodule
+twitter_url: https://github.com/moodule
+
+# Optional elements
+logo: /assets/images/logo.png
+favicon: /assets/images/favicon.ico
+legal_terms:
+  url: /en/legal-terms/
+privacy_policy:
+  url: /en/privacy-policy/
+  third_party:
+    hosting: github
+
+# Recaptcha in forms
+recaptcha:
+  sitekey: 6LdzdcgUAAAAAF-3fFepKyWHRf0Yg1PHegY8z-pl
+
+# Collections
+collections:
+  parallelism:
+    output: false
+    date: 2019-05-07
+  shiva:
+    output: false
+    date: 2019-05-08
+
+# Default settings
+defaults:
+  -
+    scope:
+      type: "redirects"
+    values:
+      layout: "redirect"
+      lang: "x-default"
+  -
+    scope:
+      path: ""
+    values:
+      menu: default
+  -
+    scope:
+      path: "en"
+    values:
+      lang: "en"
+  -
+    scope:
+      path: "fr"
+    values:
+      lang: "fr"
 
 # Build settings
+permalink: pretty
 markdown: kramdown
+sass:
+  style: compressed
+
+# Publication settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://dekreno.github.io/tringwinkeltje/" # the base hostname & protocol for your site, e.g. http://example.com
+author: Myriam en Annie
+copyright_holder: tringwinkeltje
+
+# Exclude from processing

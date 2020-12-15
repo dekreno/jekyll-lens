@@ -1,46 +1,173 @@
-# Lens - Jekyll Theme
+# Parallelism - Jekyll theme
 
-A Jekyll version of the "Lens" theme by [HTML5 UP](https://html5up.net/).
+> A Jekyll version of the "Parallelism" theme by [HTML5 UP][html5up].
 
-![Lens Theme](assets/images/lens.jpg "Lens Theme")
+You can preview the theme [here](https://moodule.github.io/jekyll-theme-parallelism).
 
-# How to Use
+![Parallelism Theme](assets/images/screenshot.jpg "Parallelism Theme")
 
-For those unfamiliar with how Jekyll works, check out [https://jekyllrb.com/](https://jekyllrb.com/) for all the details,
-or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/),
+# Features
+
+> **Responsive**: out of the box support for all screen sizes, be it smartphones, laptops, tablets...
+
+> **Multilingual**: easily manage pages, menu, url, dates, sitemap in several languages
+
+> **Customizable**: theme colors, menu, social items can be changed from a central config file
+
+> **Vector images**: the theme images are vectorized, render smoothly on any display and can be dynamically styled
+
+> **GDPR ready**: bundled with a cookie consent plugin and a boilerplate privacy policy compliant with GDPR
+
+> **SEO ready**: sitemap, robots.txt and tags are automatically generated for the website
+
+> **Light**: svg images, thumbs and lazy loading for raster images, few libraries
+
+> **Hardened**: form validation, recaptcha, verified libraries
+
+# Installation
+
+Add this line to your Jekyll site's `Gemfile`:
+
+```ruby
+gem "jekyll-theme-parallelism"
+```
+
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+theme: jekyll-theme-parallelism
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install jekyll-theme-parallelism
+
+# Usage
+
+For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details, 
+or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/), 
 and [creating pages](https://jekyllrb.com/docs/pages/).
 
-- **GitLab**: Simply fork this repository and start editing the `_config.yml` file!  
-- **GitHub**: Fork this reposity and create a branch named `gh-pages`, then start editing the `_config.yml` file!
+## Initialization
 
-# Issues
+Copy the file `_config.yml` from the theme repository to the root of your website folder tree.
+The following section explains what the settings impact and how to configure `_config.yml` properly.
 
-If you would like to report a bug, ask a question, request a feature, feel free to do so on [the GitLab repository](https://gitlab.com/andrewbanchich/lens-jekyll-theme) and I will be more than happy to help!
+## Configuration
 
-Alternatively, you can open an issue via email by emailing [incoming+andrewbanchich/lens-jekyll-theme@incoming.gitlab.com](mailto:incoming+andrewbanchich/lens-jekyll-theme@incoming.gitlab.com).
+You can use the following custom parameters in `_config.yml`.
 
-The GitHub repository is simply a mirror of the GitLab repository.
+### Site
+
+Both `title` and `subtitle` are displayed side by side :
+- in the tab name
+- at the top of the page, in the header
+
+### Social
+
+Social icons will appear for each url your fill in, among `facebook_url` etc.
+
+### Contact
+
+Your contact information can be used in contact forms, the footer or anywhere else.
+
+### Recaptcha
+
+The contact form is validated using [google's recaptcha plugin][recaptcha-documentation].
+First, you need to [sign your website up] to enable the plugin.
+Google will provide you with a **client-side integration key**: copy it to `_config.yml` under `recaptcha.sitekey`.
+
+## Publication
+
+### On Github Pages
+
+In your own website's repository, edit the `_config.yml` file:
+
+```yaml
+url: "https://<github-account-name>.github.io/<repository-name>"
+```
+
+Build the website with:
+
+    $ JEKYLL_ENV=production bundle exec jekyll build
+
+Commit all your work to the current branch.
+
+Create a branch named `gh-pages`:
+
+    $ git checkout -b gh-pages
+
+And finally replace the repository's content with the generated webpages:
+
+    $ mkdir ~/backup
+    $ mv ./* ~/backup/
+    $ mv ~/backup/.git ./
+    $ mv ~/backup/_site/* ./
+    $ git add .
+    $ git commit -m "First draft"
+
+The repository's content is backup in the home directory of the user.
+
+And finally push to github
+
+    $ git push --u origin gh-pages
+
+### On any server
+
+In your own website's directory, edit the `_config.yml` file:
+
+```yaml
+url: "https:<domain-name>"
+```
+
+Build the website with:
+
+    $ JEKYLL_ENV=production bundle exec jekyll build
+
+Copy the content of the folder `_site` to your server, most likely in `www`.
+
+If necessary, configure your server to serve this directory.
+
+# Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/moodule/jekyll-theme-parallelism. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant][contributor-covenant] code of conduct.
+
+# Development
+
+To set up your environment to develop this theme, run `bundle install`.
+
+To test the theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using the theme. Add pages, documents, data, etc. like normal to test the theme's contents. As you make modifications to the theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+When the theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git are be bundled.
+To add a custom directory to the theme-gem, please edit the regexp in `jekyll-theme-parallelism.gemspec` accordingly.
 
 # Credits
 
 Original README from HTML5 UP:
 
 ```
-Lens by HTML5 UP
+Parallelism by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
 
-This is Lens, a full screen (and entirely responsive) photo gallery design. Unlike previous
-designs I've done in this vein (Parallelism, for instance), this one eschews the usual
-lightbox in favor of a completely full screen experience -- one that I'm happy to say
-translates awesomely all the way down to the tiniest of mobile devices. Full instructions
-below!
+It's done! Parallelism was an idea I mocked up a few months ago but, due to other
+committments, didn't get around to putting to code until recently. Different to
+my more general-purpose freebies, this one's specifically built for portfolio use
+with a very unique look/layout. Hope you enjoy it!
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+Demo images* are courtesy of the supremely talented photographer Felicia Simion.
+If you like photography or just enjoy being blown away by awesome stuff, check
+out her portfolio for more stunning images:
 
-(* = Not included)
+http://ineedchemicalx.deviantart.com/
+
+(* = Not included! Only meant for use with my own on-site demo, so please do NOT download
+and/or use any of Felicia's work without her explicit permission!)
 
 Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
 
@@ -48,93 +175,44 @@ AJ
 aj@lkn.io | @ajlkn
 
 
-Instructions:
-
-	Overview:
-
-		Lens is made up of three primary components:
-
-		- The "main wrapper": The skinny little column on the right. Home to what little
-		  "regular" content you may have (header, footer, anything else you want to cram
-		  in there), as well as ...
-
-		- The "thumbnails" section: A grid of thumbnails pointing to their respective
-		  full size images.
-
-		- The "viewer": Basically the rest of the page, and basically where your full size
-		  images will show up when a thumbnail is clicked.
-
-		Note: Only the main wrapper and the thumbnails section are actually present in
-		index.html. The viewer will be dynamically created on page load.
-
-	How it works:
-
-		Just add your thumbnails to the thumbnails section in the following format:
-
-			<article>
-				<a class="thumbnail" href="path/to/fullsize.jpg">
-					<img src="path/to/thumbnail.jpg" alt="" />
-				</a>
-				<h2>Title</h2>
-				<p>Description.</p>
-			</article>
-
-		And that's it. Lens will figure out the rest.
-
-	The "data-position" attribute:
-
-		As a full screen experience, the viewer will be subject to changes in its size and,
-		consequently, its aspect ratio. Since your full size images are basically applied as
-		backgrounds to the viewer itself, this means they'll probably (okay, definitely) get
-		cropped. All is not lost, however, as you can use the optional "data-position" attribute
-		to control how the full size image is positioned within the viewer. To do this, simply
-		add it to your thumbnail's <a> element and set it to any valid "background-position"
-		value. For example, this:
-
-			<a class="thumbnail" href="path/to/fullsize.jpg" data-position="top left">...</a>
-
-		... positions this particular full size image in the top left corner of the viewer (as
-		opposed to its center, the default), effectively limiting cropping to everything but
-		the top left corner.
-
-	Keyboard shortcuts:
-
-		Lens is set up to respond to the following keyboard shortcuts:
-
-		- Left Arrow: Go to previous image.
-		- Right Arrow: Go to next image.
-		- Up Arrow: Go to image above the current one in the thumbnails section.
-		- Down Arrow: Go to image below the current one in the thumbnails section.
-		- Space: Go to next image.
-		- Escape: Toggle the main wrapper.
-
-		Note: All keyboard shortcuts are disabled when the "xsmall" breakpoint is active
-		(since they don't really make a whole lot of sense there).
-
-	Other stuff:
-
-		- The main wrapper can be moved to the left by changing the "misc.main-side" variable
-		  in assets/sass/libs/_vars.scss to "left" (and of course recompiling your CSS).
-
-		- Additional tweakable settings can be found at the top of assets/js/main.js, but
-		  be aware most of these need to sync with certain Sass variables (see comments
-		  for details).
-
-
 Credits:
 
-	Demo Images:
-		Unsplash (unsplash.com)
+    Demo Images:
+        Felicia Simion (ineedchemicalx.deviantart.com)
+            "Pasadena" (ineedchemicalx.deviantart.com/art/Pasadena-357650036)
+            "Your really got me" (ineedchemicalx.deviantart.com/art/You-really-got-me-345249340)
+            "Ad Infinitum" (ineedchemicalx.deviantart.com/art/Ad-infinitum-354203162)
+            "Different." (ineedchemicalx.deviantart.com/art/Different-353708988)
+            "Elysium" (ineedchemicalx.deviantart.com/art/Elysium-355393900)
+            "Kingdom of the Wind" (ineedchemicalx.deviantart.com/art/Kingdom-of-the-Wind-348268044)
+            "The Pursuit" (ineedchemicalx.deviantart.com/art/The-Pursuit-355003425)
+            "Boundless" (ineedchemicalx.deviantart.com/art/Boundless-291831118)
+            "The Spectators" (ineedchemicalx.deviantart.com/art/The-Spectators-342155982)
 
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
+    Icons:
+        Font Awesome (fontawesome.io)
 
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
-
+    Other:
+        jQuery (jquery.com)
+        normalizeWheel (@miorel + @pieterv of Facebook)
+        Responsive Tools (github.com/ajlkn/responsive-tools)
 ```
 
-Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
+Inspired by the conversions of [Andrew Banchich][andrew-banchich].
+
+Uses the basic template from the [cookie consent plugin][cookieconsent].
+
+Repository [Jekyll logo][jekyll-logo] icon licensed under a [Creative Commons Attribution 4.0 International License][cc4-license].
+
+## License
+
+The theme is available as open source under the terms of the [CC-BY-3.0](LICENSE).
+
+[andrew-banchich]: https://gitlab.com/andrewbanchich
+[cc4-license]: http://choosealicense.com/licenses/cc-by-4.0/
+[contributor-covenant]: http://contributor-covenant.org
+[cookieconsent]: https://github.com/osano/cookieconsent
+[html5up]: https://html5up.net/
+[jekyll-logo]: https://github.com/jekyll/brand
+[recaptcha-documentation]: https://developers.google.com/recaptcha/intro
+[recaptcha-registering]: https://www.google.com/recaptcha/admin
