@@ -61,11 +61,11 @@ defaults:
       path: ""
     values:
       menu: default
-  # -
-  #   scope:
-  #     path: "en"
-  #   values:
-  #     lang: "en"
+  -
+    scope:
+      path: "nl"
+    values:
+      lang: "nl"
   # -
   #   scope:
   #     path: "fr"
@@ -80,7 +80,7 @@ sass:
 
 # Publication settings
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dekreno.github.io/tringwinkeltje/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://dekreno.github.io/tringwinkeltje" # the base hostname & protocol for your site, e.g. http://example.com
 author: Myriam en Annie
 copyright_holder: tringwinkeltje
 
