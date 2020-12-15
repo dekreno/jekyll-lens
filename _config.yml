@@ -41,7 +41,7 @@ recaptcha:
 
 # Collections
 collections:
-  :
+  parallelism:
     output: false
     date: 2019-05-07
   shiva:
